@@ -10,8 +10,9 @@ WORKDIR /var/www
 
 COPY . .
 
+RUN cp .env.laravel .env
 RUN composer install
-
 RUN php artisan key:generate
+
 
 CMD ["php-fpm"]
